@@ -14,12 +14,12 @@ Then open **http://localhost:5000** in your browser.
 
 ## How it's organized
 
-- `planner.py` — core logic: scoring, persistence (`tasks.json`), add/complete/delete.
+- `planner.py` - core logic: scoring, persistence (`tasks.json`), add/complete/delete.
   No framework code lives here, so it could be reused by a CLI, a bot, etc.
-- `app.py` — Flask server. Exposes a small JSON API and serves the frontend.
-- `templates/index.html` — page markup.
-- `static/style.css` — visual design.
-- `static/app.js` — talks to the API and renders the queue.
+- `app.py` - Flask server. Exposes a small JSON API and serves the frontend.
+- `templates/index.html` - page markup.
+- `static/style.css` - visual design.
+- `static/app.js` - talks to the API and renders the queue.
 
 ## API
 
