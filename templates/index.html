@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deck — AI Task Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="deck">
+
+  <header class="deck-header">
+    <div class="wordmark">
+      <span class="wordmark-mark">◆</span>
+      <span class="wordmark-text">Deck</span>
+    </div>
+    <p class="tagline">A running readout of what deserves your attention next.</p>
+  </header>
+
+  <main class="deck-grid">
+
+    <!-- LEFT COLUMN: Next Up + Add form -->
+    <section class="col-left">
+
+      <div class="panel next-up" id="next-up-panel">
+        <div class="panel-label">
+          <span class="dot" id="next-up-dot"></span>
+          Next up
+        </div>
+        <div id="next-up-body">
+          <p class="next-up-empty">Nothing queued. Add a task to get a recommendation.</p>
+        </div>
+      </div>
+
+      <div class="panel add-panel">
+        <div class="panel-label">New task</div>
+        <form id="add-form">
+          <label class="field">
+            <span>Title</span>
+            <input type="text" id="f-title" placeholder="Ship the release notes" required>
+          </label>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Priority</span>
+              <select id="f-priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Deadline</span>
+              <input type="date" id="f-deadline">
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Estimated effort (hours)</span>
+            <input type="number" id="f-effort" min="0.25" step="0.25" value="1">
+          </label>
+
+          <button type="submit" class="btn-primary">Add to queue</button>
+          <p class="form-error" id="form-error"></p>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: Queue + Log -->
+    <section class="col-right">
+
+      <div class="panel queue-panel">
+        <div class="panel-label">
+          Queue
+          <span class="panel-label-sub" id="queue-count">0 open</span>
+        </div>
+        <div id="queue-list" class="queue-list">
+          <p class="empty-state">Your queue is empty. Nice work, or time to add something.</p>
+        </div>
+      </div>
+
+      <div class="panel log-panel">
+        <button class="log-toggle" id="log-toggle">
+          <span>Completed log</span>
+          <span class="chevron" id="log-chevron">▾</span>
+        </button>
+        <div id="log-list" class="log-list collapsed"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="deck-footer">
+    Score = urgency band + priority weight + quick&#8209;win bonus. Recomputed on every load.
+  </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

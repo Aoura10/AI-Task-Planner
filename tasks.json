@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Work",
+    "priority": "high",
+    "deadline": "2026-07-23",
+    "effort_hours": 1.0,
+    "done": false,
+    "created": "2026-07-22"
+  }
+]

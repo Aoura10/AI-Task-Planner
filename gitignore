@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+env/
+venv/
+.venv/
+
+# Flask
+instance/
+*.log
+
+# App data (don't commit your personal task list)
+tasks.json
+
+# Editor/OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
