@@ -1,4 +1,4 @@
-# Deck — AI Task Planner (web version)
+# Deck - AI Task Planner (web version)
 
 A small Flask app + frontend on top of the same scoring logic from the
 original CLI planner.
