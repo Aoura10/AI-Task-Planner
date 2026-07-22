@@ -32,12 +32,12 @@ Then open **http://localhost:5000** in your browser.
 | DELETE | `/api/tasks/<id>`             | Remove a task |
 | GET    | `/api/suggest`                | Returns the single top-ranked task with a reason string |
 
-Data is stored in `tasks.json` next to `planner.py` — no database needed.
+Data is stored in `tasks.json` next to `planner.py` - no database needed.
 
 ## Notes
 
 - This uses Flask's built-in dev server (`app.run(debug=True)`), which is fine
   for local use but not for production. For a real deployment, run it behind
   something like gunicorn and turn `debug` off.
-- There's no auth or multi-user support — everyone hitting the server shares
+- There's no auth or multi-user support - everyone hitting the server shares
   one task list. Fine for personal use; would need accounts/sessions to go further.
