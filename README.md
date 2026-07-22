@@ -7,7 +7,7 @@ original CLI planner.
 
 ```bash
 pip install -r requirements.txt
-python app.py (#if this doesnt work then try - python3 app.py)
+python app.py #(if this doesnt work then try - python3 app.py)
 ```
 
 Then open **http://localhost:5000** in your browser.
